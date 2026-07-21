@@ -26,7 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
 
         <ThumbNav />
-        {/* Renders safely outside layout bounding flow structures */}
+        {/* Renders safely outside layout bounding flow structures a*/}
         <PopupCard />
       </body>
     </html>
