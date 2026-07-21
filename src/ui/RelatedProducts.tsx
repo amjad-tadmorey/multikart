@@ -1,3 +1,5 @@
+"use client"
+
 import { useRef } from 'react';
 import ProductCard from './ProductCard';
 import { RiArrowLeftSLine, RiArrowRightSLine } from '@remixicon/react';
