@@ -1,7 +1,7 @@
 // app/products/[id]/page.js
 export const dynamic = 'force-dynamic'; // Prevent any build caching
 
-export default async function TestProductPage({ params }) {
+export default async function TestProductPage({ params }: any) {
     const resolvedParams = await params;
     const id = resolvedParams?.id;
 
