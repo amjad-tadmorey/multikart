@@ -3,6 +3,7 @@ import ProductMainDetails from "@/ui/ProductMainDetails";
 import RelatedProducts from "@/ui/RelatedProducts";
 import TabbedContent from "@/ui/TabbedContent";
 
+export const dynamic = "force-dynamic"
 
 const product = {
     title: "Gym Coords Set",
