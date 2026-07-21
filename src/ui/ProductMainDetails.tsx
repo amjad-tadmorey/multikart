@@ -3,7 +3,7 @@ import React from 'react'
 import Accordion from './Accordion'
 import ImageGallery from './ImageGallery'
 
-const ProductMainDetails = ({ product }) => {
+const ProductMainDetails = ({ product }: any) => {
   return (
     <section className="relative grid grid-cols-1 lg:grid-cols-3 gap-10 items-start border-light">
 
@@ -14,7 +14,7 @@ const ProductMainDetails = ({ product }) => {
 
         {/* B. Long Details block that forces this layout column to be taller than the gallery */}
 
-        <div className="w-full text-mid-gray bg-white text-[#333333] font-sans antialiased pt-4 px-4 space-y-4">
+        <div className="w-full text-mid-gray bg-white font-sans antialiased pt-4 px-4 space-y-4">
 
           {/* Notification Alert Banner */}
           <div className="flex items-center gap-2 text-sm font-medium ">
@@ -84,23 +84,23 @@ const ProductMainDetails = ({ product }) => {
                   <h3 className="font-bold text-lg mb-3">Product Info</h3>
                   <ul className="grid grid-cols-2 gap-x-3 gap-y-2 leading-relaxed text-mid-gray text-md">
                     <li className="flex items-start gap-1">
-                      <span className="text-neutral-400 mt-[1px] select-none text-[10px]">■</span>
+                      <span className="text-neutral-400 mt-px select-none text-[10px]">■</span>
                       <span>SKU: SP18 (COPY)</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-neutral-400 mt-[1px] select-none text-[10px]">■</span>
+                      <span className="text-neutral-400 mt-px select-none text-[10px]">■</span>
                       <span>Unit: 1 Item</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-neutral-400 mt-[1px] select-none text-[10px]">■</span>
+                      <span className="text-neutral-400 mt-px select-none text-[10px]">■</span>
                       <span>Weight: 150 Gms</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-neutral-400 mt-[1px] select-none text-[10px]">■</span>
+                      <span className="text-neutral-400 mt-px select-none text-[10px]">■</span>
                       <span>Stock Status: In stock</span>
                     </li>
                     <li className="flex items-start gap-2 col-span-2">
-                      <span className="text-neutral-400 mt-[1px] select-none text-[10px]">■</span>
+                      <span className="text-neutral-400 mt-px select-none text-[10px]">■</span>
                       <span>Quantity: 40 Items Left</span>
                     </li>
                   </ul>
@@ -110,11 +110,11 @@ const ProductMainDetails = ({ product }) => {
                 <div className="border-t border-neutral-100 pt-4 space-y-2">
                   <h3 className="font-bold text-sm mb-2">Delivery Details</h3>
                   <div className="flex items-start gap-2.5 leading-normal text-neutral-600">
-                    <span className="text-neutral-400 mt-[2px]"><RiTruckLine size={16} /></span>
+                    <span className="text-neutral-400 mt-0.5"><RiTruckLine size={16} /></span>
                     <span>Your order is likely to reach you within 7 days.</span>
                   </div>
                   <div className="flex items-start gap-2.5 leading-normal text-neutral-600">
-                    <span className="text-neutral-400 mt-[2px]"><RiArrowLeftRightLine size={16} /></span>
+                    <span className="text-neutral-400 mt-0.5"><RiArrowLeftRightLine size={16} /></span>
                     <span>Hassle free returns within 7 Days.</span>
                   </div>
                 </div>
@@ -211,7 +211,7 @@ const ProductMainDetails = ({ product }) => {
 
           {/* 5. Stock Progress Bar */}
           <div className="w-full bg-neutral-100 h-2.5 overflow-hidden mb-6 rounded-full">
-            <div className="bg-gradient-to-r from-[#8cc63f] to-[#5cb85c] h-full w-[100%]" />
+            <div className="bg-linear-to-r from-[#8cc63f] to-[#5cb85c] h-full w-full" />
           </div>
 
           {/* 6. Utility Links */}

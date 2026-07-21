@@ -59,3 +59,13 @@ body {
 .parent:hover .anime {
   animation: marqueeCustom 12s linear infinite;
 }
+
+.parent-link:hover .sub-link {
+  opacity: 100;
+}
+
+@theme {
+  /* This creates a custom prefix breakpoint called "special:" */
+  --breakpoint-special: 1116px;
+  --breakpoint-above-mobile: 578px;
+}

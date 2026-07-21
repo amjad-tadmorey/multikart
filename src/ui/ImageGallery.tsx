@@ -42,7 +42,7 @@ export default function ImageGallery({ product }: ProductProps) {
     return (
         <div className="w-full space-y-4 select-none">
             {/* 1. Main View Display Panel (Smooth Cross-fade implementation) */}
-            <div className="relative aspect-[4/5] w-full overflow-hidden bg-neutral-100">
+            <div className="relative aspect-4/5 w-full overflow-hidden bg-neutral-100">
                 {allImages.map((img, idx) => (
                     <img
                         key={idx}
@@ -60,7 +60,7 @@ export default function ImageGallery({ product }: ProductProps) {
             {/* 2. Slideable Thumbnails Row */}
             <div
                 ref={thumbnailContainerRef}
-                className="flex px-4 py-2 gap-3 overflow-x-auto pb-2 scroll-smooth snap-x snap-mandatory [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+                className="flex px-4 py-2 gap-3 overflow-x-auto pb-2 scroll-smooth snap-x snap-mandatory [-webkit-overflow-scrolling:touch] scrollbar-none [&::-webkit-scrollbar]:hidden"
             >
                 {allImages.map((img, idx) => {
                     const isActive = idx === selectedIndex;
@@ -68,7 +68,7 @@ export default function ImageGallery({ product }: ProductProps) {
                         <button
                             key={idx}
                             onClick={() => handleThumbClick(idx)}
-                            className={`relative cursor-pointer aspect-square w-20 sm:w-24 flex-shrink-0 overflow-hidden bg-neutral-50 snap-center transition-all duration-300 ease-out focus:outline-none
+                            className={`relative cursor-pointer aspect-square w-20 sm:w-24 shrink-0 overflow-hidden bg-neutral-50 snap-center transition-all duration-300 ease-out focus:outline-none
                 ${isActive
                                     ? 'ring-2 ring-[#f07c4c] ring-offset-2 scale-100 opacity-100 shadow-md'
                                     : 'scale-95 opacity-40 hover:opacity-80'

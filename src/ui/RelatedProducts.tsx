@@ -79,12 +79,12 @@ const RelatedProducts = () => {
             {/* Slider container using layout calculations */}
             <div
                 ref={sliderRef}
-                className="flex gap-6 overflow-x-auto pb-4 scroll-smooth snap-x snap-mandatory [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+                className="flex gap-6 overflow-x-auto pb-4 scroll-smooth snap-x snap-mandatory [-webkit-overflow-scrolling:touch] scrollbar-none [&::-webkit-scrollbar]:hidden"
             >
                 {productsData.map((p, index) => (
                     <div
                         key={index}
-                        className="snap-start flex-shrink-0 
+                        className="snap-start shrink-0
                                    w-[calc((100%-24px)/2)] 
                                    md:w-[calc((100%-48px)/3)] 
                                    lg:w-[calc((100%-72px)/4)]"

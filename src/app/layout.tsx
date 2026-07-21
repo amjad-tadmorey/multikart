@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
-// 1. Import the font loader
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import ThumbNav from "@/components/ThumbNav";
+// Import the new animated popup card
+import PopupCard from "@/components/PopupCard";
 
-// 2. Initialize the font with required weights and assign a CSS variable name
 const assignmentMontserrat = Montserrat({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-montserrat", // This connects to your CSS configuration
+  variable: "--font-montserrat",
 });
 
 export const metadata: Metadata = {
@@ -18,12 +19,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    // 3. Inject the font's variable class into the HTML element
     <html lang="en" className={assignmentMontserrat.variable}>
-      <body className="flex min-h-screen flex-col bg-slate-50">
+      <body className="flex min-h-screen flex-col bg-slate-50 pb-16 md:pb-0">
         <Header />
         <main className="flex-1 w-full">{children}</main>
         <Footer />
+
+        <ThumbNav />
+        {/* Renders safely outside layout bounding flow structures */}
+        <PopupCard />
       </body>
     </html>
   );
