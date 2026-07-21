@@ -2,6 +2,9 @@ import ProductMainDetails from "@/ui/ProductMainDetails";
 import RelatedProducts from "@/ui/RelatedProducts";
 import TabbedContent from "@/ui/TabbedContent";
 
+export const dynamic = "force-dynamic"
+
+
 const product = {
     title: "Gym Coords Set",
     mainImage: "/data-product-1-1.jpg",
@@ -10,32 +13,32 @@ const product = {
         "/data-product-1-3.jpg",
         "/data-product-1-4.jpg",
     ]
-};
 
+}
+
+// 2. Define the types for your route parameters
 interface PageProps {
     params: Promise<{ id: string }>;
 }
 
-// Keep this as an async Server Component (No "use client" at the very top)
+// Next.js App Router dynamic page components receive a params Promise
 export default async function ProductDetailPage({ params }: PageProps) {
-    // Await params to read the ID dynamically on the server
+
     const resolvedParams = await params;
     const id = resolvedParams.id;
 
     return (
         <div className="">
             <div className="bg-lighter py-8">
-                <h1 className="text-3xl text-center font-md">{product.title}</h1>
-                <p className="text-center text-gray font-semibold mt-2">
-                    Home / Product / {product.title} (ID: {id})
-                </p>
+                <h1 className="text-3xl text-center font-md">Gym Coords Set</h1>
+                <p className="text-center text-gray font-semibold mt-2">Home / Product / Gym Coords Set</p>
             </div>
             <div className="px-2 md:px-20 space-y-6 mt-12">
-                {/* Your Client Components work perfectly inside here */}
                 <ProductMainDetails product={product} />
                 <TabbedContent />
                 <RelatedProducts />
             </div>
+
         </div>
     );
 }
