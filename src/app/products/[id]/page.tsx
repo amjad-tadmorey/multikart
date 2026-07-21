@@ -1,44 +1,14 @@
-import ProductMainDetails from "@/ui/ProductMainDetails";
-import RelatedProducts from "@/ui/RelatedProducts";
-import TabbedContent from "@/ui/TabbedContent";
+// app/products/[id]/page.js
+export const dynamic = 'force-dynamic'; // Prevent any build caching
 
-export const dynamic = "force-dynamic"
-
-
-const product = {
-    title: "Gym Coords Set",
-    mainImage: "/data-product-1-1.jpg",
-    imgs: [
-        "/data-product-1-2.jpg",
-        "/data-product-1-3.jpg",
-        "/data-product-1-4.jpg",
-    ]
-
-}
-
-// 2. Define the types for your route parameters
-interface PageProps {
-    params: Promise<{ id: string }>;
-}
-
-// Next.js App Router dynamic page components receive a params Promise
-export default async function ProductDetailPage({ params }: PageProps) {
-
+export default async function TestProductPage({ params }) {
     const resolvedParams = await params;
-    const id = resolvedParams.id;
+    const id = resolvedParams?.id;
 
     return (
-        <div className="">
-            <div className="bg-lighter py-8">
-                <h1 className="text-3xl text-center font-md">Gym Coords Set</h1>
-                <p className="text-center text-gray font-semibold mt-2">Home / Product / Gym Coords Set</p>
-            </div>
-            <div className="px-2 md:px-20 space-y-6 mt-12">
-                <ProductMainDetails product={product} />
-                <TabbedContent />
-                <RelatedProducts />
-            </div>
-
+        <div style={{ padding: '2rem', fontFamily: 'sans-serif' }}>
+            <h1>Debug Route Success!</h1>
+            <p>The dynamic product ID is: <strong>{id}</strong></p>
         </div>
     );
 }
